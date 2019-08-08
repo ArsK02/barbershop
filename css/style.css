@@ -924,39 +924,25 @@ input[type="radio"].visually-hidden {
 	margin-left: -230px;
 	padding: 50px 80px;
 }
-.modal-close {
-	position: absolute;
-	top: 0;
-	right: -34px;
-
-	width: 22px;
-	height: 22px;
-
-	font-size: 0;
-
-	background-color: transparent;
-	border: none;
-
-	cursor: pointer;
+@keyframes bounce {
+	0% { transform: translateY(-2000px); }
+	70% { transform: translateY(30px); }
+	90% { transform: translateY(-10px); }
+	100% { transform: translateY(0); }
 }
-.modal-close::before,
-.modal-close::after {
-	content: "";
-
-	position: absolute;
-	top: 10px;
-	left: 2px;
-
-	width: 19px;
-	height: 3px;
-
-	background-color: #d0d0d0;
+.modal-show {
+	display: block;
+	animation-name: bounce;
+	animation-duration: 0.6s;
 }
-.modal-close::before {
-	transform: rotate(45deg);
+@keyframes shake {
+	0%, 100% { transform: translateX(0); }
+	10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+	20%, 40%, 60%, 80% { transform: translateX(10px); }
 }
-.modal-close::after {
-	transform: rotate(-45deg);
+.modal-error {
+	animation-name: shake;
+	animation-duration: 0.6s;
 }
 .modal h2 {
 	margin: 0;
@@ -1076,6 +1062,40 @@ input[type="radio"].visually-hidden {
 }
 .modal-map p {
 	margin: 0;
+}
+.modal-close {
+	position: absolute;
+	top: 0;
+	right: -34px;
+
+	width: 22px;
+	height: 22px;
+
+	font-size: 0;
+
+	background-color: transparent;
+	border: none;
+
+	cursor: pointer;
+}
+.modal-close::before,
+.modal-close::after {
+	content: "";
+
+	position: absolute;
+	top: 10px;
+	left: 2px;
+
+	width: 19px;
+	height: 3px;
+
+	background-color: #d0d0d0;
+}
+.modal-close::before {
+	transform: rotate(45deg);
+}
+.modal-close::after {
+	transform: rotate(-45deg);
 }
 
 
